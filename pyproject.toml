@@ -1,18 +1,35 @@
 [tool.poetry]
-name = "sprint-template"
+name = "dl-master"
 version = "0.1.0"
-description = ""
-authors = ["Eduardo Correa Araujo <65051489+eduardocorrearaujo@users.noreply.github.com>"]
+description = "Deep Learning with TFT and TDA for Dengue Forecasting"
+authors = ["Zuilho Segundo <segundozuilho@gmail.com>"]
 readme = "README.md"
+package-mode = false  # <--- ADICIONE ESTA LINHA AQUI
 
 [tool.poetry.dependencies]
-python = "<3.13,>=3.10"
-mosqlient = "1.5.2"
-epiweeks = "^2.3.0"
-jupyter = "^1.0.0"
-pmdarima = "^2.0.4"
-python-dotenv = "^1.0.1"
+python = ">=3.10,<3.13"
+pytorch-forecasting = "*"
+giotto-tda = "*"
+pandas = "*"
+numpy = "*"
+scikit-learn = "*"
+matplotlib = "*"
+seaborn = "*"
+statsmodels = "*"
+geopandas = "^1.1.1"
+notebook = "^7.5.0"
+pyarrow = "^22.0.0"
+torch-geometric = "^2.7.0"
+tensorboard = "^2.20.0"
+lightning = "^2.6.0"
+torch = {version = "^2.6.0", source = "pytorch_gpu"}
+torchvision = {version = "^0.21.0", source = "pytorch_gpu"}
+tabulate = "^0.10.0"
 
+[[tool.poetry.source]]
+name = "pytorch_gpu"
+url = "https://download.pytorch.org/whl/cu124"
+priority = "explicit"
 
 [build-system]
 requires = ["poetry-core"]
