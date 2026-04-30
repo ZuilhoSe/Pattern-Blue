@@ -1,36 +1,36 @@
-[project]
+[tool.poetry]
 name = "dl-master"
 version = "0.1.0"
 description = "Deep Learning with TFT and TDA for Dengue Forecasting"
-authors = [
-    {name = "Zuilho Segundo", email = "segundozuilho@gmail.com"}
-]
+authors = ["Zuilho Segundo <segundozuilho@gmail.com>"]
 readme = "README.md"
-requires-python = ">=3.11,<3.13"
-dependencies = [
-    "pytorch-forecasting",
-    "giotto-tda",
-    "pandas",
-    "numpy",
-    "scikit-learn",
-    "matplotlib",
-    "seaborn",
-    "statsmodels",
-    "geopandas>=1.1.1",
-    "notebook>=7.5.0",
-    "pyarrow>=22.0.0",
-    "torch-geometric>=2.7.0",
-    "tensorboard>=2.20.0",
-    "lightning>=2.6.0",
-    "torch>=2.6.0",
-    "torchvision>=0.21.0",
-    "tabulate>=0.10.0"
-]
+package-mode = false  # <--- ADICIONE ESTA LINHA AQUI
 
-[tool.poetry]
-# Equivalente ao antigo package-mode = false
-package-mode = false
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+pytorch-forecasting = "*"
+giotto-tda = "*"
+pandas = "*"
+numpy = "*"
+scikit-learn = "*"
+matplotlib = "*"
+seaborn = "*"
+statsmodels = "*"
+geopandas = "^1.1.1"
+notebook = "^7.5.0"
+pyarrow = "^22.0.0"
+torch-geometric = "^2.7.0"
+tensorboard = "^2.20.0"
+lightning = "^2.6.0"
+torch = {version = "^2.6.0", source = "pytorch_gpu"}
+torchvision = {version = "^0.21.0", source = "pytorch_gpu"}
+tabulate = "^0.10.0"
+
+[[tool.poetry.source]]
+name = "pytorch_gpu"
+url = "https://download.pytorch.org/whl/cu124"
+priority = "explicit"
 
 [build-system]
-requires = ["poetry-core>=2.0.0"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

@@ -127,6 +127,8 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
+.idea
+
 # Environments
 .env
 .venv
@@ -183,3 +185,4 @@ cython_debug/
 data/raw
 data/processed/dataset_tft_completo.csv
 data/processed/dataset_inference.parquet
+.idea/workspace.xml
